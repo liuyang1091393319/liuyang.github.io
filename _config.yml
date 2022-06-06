@@ -77,12 +77,12 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "java程序猿"
-sidebar-avatar: https://thumbnail0.baidupcs.com/thumbnail/fc96baaa4se1cdba96999e6fb3a2f5fa?fid=2469022239-250528-301353200385839&time=1654153200&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-DstXkvzHDw76SWHeiEG27ER%2Fhrk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=81244819738357559&dp-callid=0&file_type=0&size=c710_u400&quality=100&vuk=-&ft=video # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://www.neijiang.gov.cn/neiJiangPublicData/portalImg/neijiangCity/suggest.png
 
 
 
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
+featured-tags: false                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
@@ -99,9 +99,9 @@ page-mathjax: false
 
 
 # Friends
-friends: [
-#    {
-#        title: "尹峰以为",
-#        href: "http://ingf.github.io/"
-#    }
-]
+#friends: [
+  #    {
+  #        title: "尹峰以为",
+  #        href: "http://ingf.github.io/"
+  #    }
+#]
