@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     ly
-zhihu_username:     ly
-github_username:    ly
-twitter_username:   ly
+#weibo_username:     ly
+#zhihu_username:     ly
+#github_username:    ly
+#twitter_username:   ly
 
 
 
@@ -76,7 +76,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "java程序猿"
+sidebar-about-description: "java程序猿，今天，也是充满希望的一天！！"
 sidebar-avatar: https://www.neijiang.gov.cn/neiJiangPublicData/portalImg/neijiangCity/suggest.png
 
 
