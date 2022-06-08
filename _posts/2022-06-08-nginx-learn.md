@@ -33,21 +33,23 @@ server {
 }
 ```
 
----
 
 ## 二、负载均衡
 >负载均衡，英文名称为Load Balance，其含义就是指将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行，例如FTP服务器、Web服务器、企业核心应用服务器和其它主要任务服务器等，从而协同完成工作任务。
 >如果其中一个节点挂了，nginx会自动转发到其他正常节点，使服务高可用。
 
-<img style="border-radius: 20px;" src="/img/in-post/nginx/fzjh.png"  alt="负载均衡" width="600px" >
+**负载均衡策略**
 
-### 负载均衡策略
 * 1、轮询【默认】：
     每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除
 * 2、指定权重：
     指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况
 * 3、IP绑定：
     每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器
+    
+<img style="border-radius: 20px;" src="/img/in-post/nginx/fzjh.png"  alt="负载均衡" width="600px" >
+
+
     
 * 例：同一后端服务部署了两个节点（分别是localhost:9527和localhost:9528）,用户通过http://liuyang2.com:8080访问服务，
 第一次访问走9527端口的服务，第二次访问走9528端口的服务，每个服务各访问1次这样依次轮询。通过改变weigth的数值调整访问次数，性能较好的服务器weigth配置大一点。
@@ -136,12 +138,12 @@ server {
 	listen       8081;
 	server_name  localhost;
 	location ~ .*\.(jpg|jpeg|JPG|png|gif|icon)$ {
-        root H:/nginx/dist/;
-        #配置白名单域名，可以多个
-        valid_referers blocked liuyang1.com liuyang2.com;
-        if ($invalid_referer) {
-            return 403;
-        } 
+            root H:/nginx/dist/;
+            #配置白名单域名，可以多个
+            valid_referers blocked liuyang1.com liuyang2.com;
+            if ($invalid_referer) {
+                return 403;
+            } 
 	}
 }
 ```
