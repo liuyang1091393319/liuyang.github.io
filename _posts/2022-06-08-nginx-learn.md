@@ -14,12 +14,12 @@ tags:
 
 >Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务
 
----
+
 
 ## 一、反向代理
 >反向代理（Reverse Proxy）方式是指以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。
 
-<img style="border-radius: 20px;" src="img/in-post/nginx/fxdl.png"  alt="反向代理" width="600px" >
+<img style="border-radius: 20px;" src="/img/in-post/nginx/fxdl.png"  alt="反向代理" width="600px" >
 
 * 例：使用反向代理http://liuyang1.com:8080 直接跳转到 http://localhost:9527/，配置如下：
 ```
@@ -39,7 +39,7 @@ server {
 >负载均衡，英文名称为Load Balance，其含义就是指将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行，例如FTP服务器、Web服务器、企业核心应用服务器和其它主要任务服务器等，从而协同完成工作任务。
 >如果其中一个节点挂了，nginx会自动转发到其他正常节点，使服务高可用。
 
-###负载均衡策略
+### 负载均衡策略
 * 1、轮询【默认】：
     每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除
 * 2、指定权重：
@@ -47,10 +47,11 @@ server {
 * 3、IP绑定：
     每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器
 
-<img style="border-radius: 20px;" src="img/in-post/nginx/fzjh.png"  alt="负载均衡" width="600px" >
+<img style="border-radius: 20px;" src="../img/in-post/nginx/fzjh.png"  alt="负载均衡" width="600px" >
 
 * 例：同一后端服务部署了两个节点（分别是localhost:9527和localhost:9528）,用户通过http://liuyang2.com:8080访问服务，
 第一次访问走9527端口的服务，第二次访问走9528端口的服务，每个服务各访问1次这样依次轮询。通过改变weigth的数值调整访问次数，性能较好的服务器weigth配置大一点。
+
 ```
 #服务节点列表
 upstream mytestserver {
@@ -103,6 +104,8 @@ server {
 
 * 例：前端开发提供了一个部署包（dist文件夹），我们先将dist文件夹放在服务器任意位置（我的dist路径为：H:\nginx\dist），
 然后访问http://localhost:8082就可以访问到dist包下面的index.html页面了。
+
+
 ```
 server {
 	listen       8082;
