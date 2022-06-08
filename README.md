@@ -24,8 +24,11 @@
 
 
 ####五、图片
-    <img style="border-radius: 20px;" src="img/about-bg.jpg"  alt="baymax" width="688" >
-   
+    
+   ```
+       <img style="border-radius: 20px;" src="img/about-bg.jpg"  alt="baymax" width="688" >
+   ```
+
 例：<img style="border-radius: 20px;" src="img/about-bg.jpg"  alt="baymax" width="688" >
 
 ####六、超链接
