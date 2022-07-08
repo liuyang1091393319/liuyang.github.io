@@ -111,9 +111,9 @@ server {
 	listen       8082;
 	server_name  localhost;
 	location  ~* \.(css|js|html|jpg|png|rar|apk|woff|ttf|swf|xml|json)$ {
-		#静态资源包路径
-        root H:/nginx/dist/;
-		index index.html index.htm;
+            #静态资源包路径
+            root H:/nginx/dist/;
+            index index.html index.htm;
 	}
 
 	location / {
